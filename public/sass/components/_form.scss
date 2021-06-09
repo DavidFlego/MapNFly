@@ -1,0 +1,208 @@
+.form-container {
+    min-width: 35vw;
+}
+
+.form {
+    
+    &-group {
+        display: flex;
+        justify-content: space-between;
+        position: relative; // also helps gramarly to be positioned correctly
+        margin-bottom: 2.2rem;
+        
+        & > div {
+            width: 100%;
+            margin: 3px;
+
+            &.form-file--input,
+            &.rating-group {
+                width: inherit;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        font-family: inherit;
+        font-size: 1.4rem;
+        color: $color-grey-dark-2;
+        margin: .6rem 0;
+        padding: 1rem;
+        border: 1px solid $color-primary;
+        border-radius: 3px;
+        box-shadow: $shadow-light, 0 0 0 3px rgba(47, 151, 193, .2);
+        transition: all .2s;
+
+        &:focus {
+            outline: none;
+            box-shadow: $shadow-light;
+            border: 1.6px solid $color-primary;
+
+            // &:invalid {
+            //     border: 1px solid $color-delete;
+            //     box-shadow: 0 0 0 3px rgba(201, 44, 64, .1);
+            // }
+        }
+
+    ///////////////////
+    // basic validation
+       
+        // & + span {
+        //     position: relative;
+        // }
+
+        // & + span::before {
+        //     content: "\f058";
+        //     font-family: "Font Awesome 5 Free"; 
+        //     font-weight: 400;
+        //     font-size: 2rem;
+        //     color: $color-save;
+        //     position: absolute;
+        //     right: 15px;
+        //     top: -7px;
+        //     opacity: 0;
+        //     transform: translateX(25px);
+        //     transition: all .3s ease;
+        // }
+
+        // &:valid + span::before {
+        //     opacity: 1;
+        //     transform: translateX(0);
+        //     transition: all .3s ease;
+        // }
+
+        // &:valid {
+        //     transition: all .3s ease;
+        // }
+        
+        &#duration + span::after {
+            content: 'minutes';
+            position: absolute;
+            bottom: 10px;
+            right: 3px;
+            border-left: 1px solid $color-primary;
+            padding: 4.5px;
+            color: $color-grey-dark-2;
+            opacity: 1;
+            transition: opacity .3s ease;
+        }
+
+        &#duration:valid + span::after {
+            opacity: 0;
+            transition: opacity .3s ease;
+        }
+
+        &::-webkit-input-placeholder {
+            color: $color-grey-dark-3;
+        }
+    }
+
+    &-control {
+        position: relative;
+
+        // & .form__input:valid {
+        //     border-color: $color-save;
+        // }
+        
+        // & .form__input:valid + i.fa-check-circle {
+        //     visibility: visible;
+        //     transform: translateX(0);
+        // }
+
+        & i.fa-check-circle {
+            color: $color-save;
+        }
+
+        & i.fa-exclamation-circle {
+            color: $color-warning;
+        }
+
+        &.success .form__input {
+            border-color: $color-save;
+        }
+
+        &.error .form__input {
+            border-color: $color-warning;
+        }
+
+        &.success i.fa-check-circle,
+        &.error i.fa-exclamation-circle {
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        & .fa-check-circle,
+        & .fa-exclamation-circle {
+            font-family: "Font Awesome 5 Free"; 
+            font-size: 2rem;
+            position: absolute;
+            right: 15px;
+            top: 41px;
+            visibility: hidden;
+            transform: translateX(25px);
+            transition: all .3s ease;
+        }
+
+        .error-msg {
+            visibility: hidden;
+            display: none;
+            color: $color-warning;
+        }
+        &.error .error-msg {
+            visibility: visible;
+            display: block;
+            color: $color-warning;
+        }
+    }
+    // basic validation
+    ///////////////////
+
+    &__label {
+        display: block;
+        font-family: inherit;
+        font-size: 1.6rem;
+        color: $color-grey-dark-2;
+        margin-left: 1.4rem;
+        transition: all .3s;
+    }
+
+    &-description {
+        display: block;
+    }
+
+    &-rating {
+        display: flex;
+        // justify-content: center;
+        flex-direction: column;
+        align-items: center;
+
+        .form__label {
+            margin: 0;
+        }
+    }
+    
+    &-submit {
+        text-align: center;
+
+        // TEST FOR BUTTON REFLECTION
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        // TEST FOR BUTTON REFLECTION
+    }
+
+    &-cancel {
+        display: block;
+        text-align: center;
+        
+        a {
+            text-decoration: none;
+            color: $color-grey-dark-4;
+            &:hover {
+                color: $color-grey-dark-3;
+            }
+        }
+    }
+    
+}

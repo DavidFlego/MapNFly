@@ -1,0 +1,73 @@
+
+// use display:inline-flex to prevent whitespace issues.
+.rating-group,
+.dd-rating-group {
+  display: inline-flex;
+
+  // hide radio inputs
+  .rating__input,
+  .dd-rating__input {
+    position: absolute !important;
+    left: -9999px !important;
+  }
+
+  // set icon padding and size
+  .rating__label,
+  .dd-rating__label {
+    cursor: pointer;
+    /* if you change the left/right padding, update the margin-right property of .rating__label--half as well. */
+    padding: 0 0.1em;
+    font-size: 2rem;
+    height: 30px;
+
+    // make hover effect work properly in IE
+    .rating__icon,
+    .dd-rating__icon {
+      pointer-events: none;
+    }
+
+    // set default star color
+    .rating__icon--star,
+    .dd-rating__icon--star {
+      color: orange;
+    }
+  }
+
+  // add padding and positioning to half star labels
+  .rating__label--half,
+  .dd-rating__label--half {
+    padding-left: 4px;
+    margin-right: -0.65em;
+    z-index: 2;
+    width: 15px;
+  }
+
+  // set color of none icon when unchecked 
+  .rating__icon--none,
+  .dd-rating__icon--none {
+    color: #eee;
+  }
+}
+
+/* if any input is checked, make its following siblings grey */
+.rating__input:checked ~ .rating__label .rating__icon--star,
+.dd-rating__input:checked ~ .dd-rating__label .dd-rating__icon--star {
+  color: #ddd;
+}
+
+/* make all stars orange on rating group hover */
+.rating-group:hover .rating__label .rating__icon--star,
+.rating-group:hover .rating__label--half .rating__icon--star,
+.dd-rating-group:hover .dd-rating__label .dd-rating__icon--star,
+.dd-rating-group:hover .dd-rating__label--half .dd-rating__icon--star {
+  color: orange;
+}
+
+/* make hovered input's following siblings grey on hover */
+.rating__input:hover ~ .rating__label .rating__icon--star,
+.rating__input:hover ~ .rating__label--half .rating__icon--star,
+.dd-rating__input:hover ~ .dd-rating__label .dd-rating__icon--star,
+.dd-rating__input:hover ~ .dd-rating__label--half .dd-rating__icon--star {
+  color: #ddd;
+}
+  

@@ -1,0 +1,131 @@
+/////////////////
+// CARDS
+.card {
+    box-shadow:  0 0.1rem 9rem rgba($color-grey-dark-2, 0.1);
+    padding: .8rem;
+    border-radius: 4px;
+    width: 100%;
+
+    &__header--onshow {
+        text-align: center;
+        margin: 4rem;
+    }
+
+    &__body {
+        position: relative;
+        display: flex;
+        align-items: center;
+        border: 1px solid $color-grey-light-4;
+        border-radius: 16px;
+        box-shadow: $shadow-light;
+        margin: 2rem;
+        padding: 2rem;
+        overflow: hidden;
+        min-height: 270px;
+
+        // & > * {
+        //     padding: .6rem;
+        // }
+    }
+
+    &__images {
+        width: 36vw;
+        display: inherit;
+        position: relative;
+        margin: 0 auto;
+
+        transform: scale(1);
+
+        &--view {
+            width: 90%;
+            // transform: scale(1.138);
+            margin-right: 3rem;
+            padding-left: 6px;
+        }
+
+        & p {
+            width: 100%;
+            text-align: center;
+        }
+
+        &--edit {
+            width: 25vw;
+            margin-bottom: 3rem;
+
+            
+        }
+
+        img {
+            width: 100%;
+            border-radius: 3px;
+            box-shadow: $shadow-light;
+        }
+
+        .card-img--input {
+            visibility: hidden;
+            position: absolute;
+            left: 0;
+        }
+
+        .card-img--delete {
+            @include centerH;
+            bottom: -45px;
+        }
+    }
+
+    &__details {
+        width: 100%;
+        margin: 0 3rem;
+        
+        & > * {
+            padding: .8rem;
+        }
+    }
+
+    &__location {
+        color: $color-grey-dark-4;
+        position: absolute;
+        bottom: 18px;
+        padding-bottom: 0;
+    }
+
+    &__created {
+        color: $color-grey-dark-4;
+        // position: absolute;
+        // bottom: 10px;
+        // right: 140px;
+    }
+
+    &__rating-number {
+        position: absolute;
+        bottom: -30px;
+        right: -11px;
+        font-size: 14rem;
+        line-height: initial;
+        opacity: .1;
+        padding: 0;
+        color: $color-grey-dark-4;
+    }
+
+    &__actions {
+        display: flex;
+        position: absolute;
+        bottom: 12px;
+        right: 10px;
+        padding: 0;
+    }
+
+    &--delete {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &__map {
+        height: 300px; 
+        padding: 2rem; 
+        margin: 2rem;
+        border-radius: 16px;
+        box-shadow: $shadow-dark;
+    }
+}

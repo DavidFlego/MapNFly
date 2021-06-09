@@ -1,0 +1,13 @@
+// HEADER LINKS  [.navbar__link, .login__link]
+.header a[class*="link"]:link,
+.header a[class*="link"]:visited {
+    @include linkStyle;
+}
+
+.header a[class*="link"]:hover{
+    @include hoverLinkStyle;
+}
+
+.header a[class*="link"].active {
+    color: $color-grey-dark-2;
+}

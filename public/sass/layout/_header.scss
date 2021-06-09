@@ -1,0 +1,63 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;   // in front of new session dropdown form
+
+    font-size: 1.4rem;
+    height: 50px;
+    border-radius: 5px;
+        background-color: $color-primary-light;
+        // background-color: #444;
+        // background-color: #3fb2ce;
+    opacity: .96;                   /////////// MAYBE, EXPLORE ////////////
+
+    /////////////////////
+    // NORMAL POSITION
+    // position: relative;
+    // margin: 5px;
+    /////////////////////
+    //FIXED POSITION 
+    position: fixed;
+    left: 50%;
+    top: 5px;
+    transform: translateX(-50%);
+    width: 99.4vw;
+
+    &__main {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        // & .back-activity {
+        //     position: absolute;
+        //     left: 10px;
+        //     height: 90%;
+        //     width: 40%;
+            // background-image: linear-gradient(to left, rgba(222, 222, 222, .05), rgba(222, 222, 222, .3), rgba(222, 222, 222, .5),rgba(222, 222, 222, .3), rgba(222, 222, 222, .05));
+            // background-image: -moz-linear-gradient(to left, rgba(222, 222, 222, .05), rgba(222, 222, 222, .3), rgba(222, 222, 222, .5), rgba(222, 222, 222, .3), rgba(222, 222, 222, .05));
+            // background-image: -webkit-linear-gradient(to left, rgba(222, 222, 222, .05), rgba(222, 222, 222, .3), rgba(222, 222, 222, .5), rgba(222, 222, 222, .3), rgba(222, 222, 222, .05));
+        //     transform: skew(-30deg);
+        // }
+        // .logo:hover + .back-activity {
+        //     animation: headerWaveAnimation 4s linear;
+        // }
+    }
+
+    &__main .logo__link,
+    &__main .navbar,
+    &__search,
+    &__login,
+    &__user {
+        z-index: 10;       // THIS IS FOR HEADER ANIMATION, PUT EVERYTHIN IN FRONT
+    }
+
+    &__login {
+        font-size: 1.4rem;
+    }
+
+    &__user {
+        position: relative;
+        min-width: 160px;
+    }
+}

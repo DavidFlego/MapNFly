@@ -1,0 +1,166 @@
+
+/////////////////////
+// BUTTONS
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        position: relative;
+        display: inline-block;
+        color: $color-grey-light-1;
+        text-decoration: none;
+        padding: .6rem;
+        margin: .4rem;
+        border-radius: 3px;
+        transition: all .2s;
+
+        // Change for the <button> element
+        border: none;
+        cursor: pointer;
+        box-shadow: $shadow-light, 0px 12px 15px -15px $color-grey-dark-3;
+    }
+
+    &:hover,
+    &:focus {
+        color: $color-grey-dark-2;
+        transform: translateY(-20%) scale(1.05,1.05);
+        box-shadow: 0px 20px 17px -5px $color-grey-dark-4;
+    }
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: $shadow-dark;
+    }
+
+    &-view {
+        background-color: $color-primary;
+    }
+
+    &-edit {
+        background-color: $color-primary-light;
+    }
+
+    &-delete {
+        background-color: $color-delete;
+        
+        &:hover {
+            background-color: $color-delete-hover;
+            transform: translate(-8%, 8%) scale(1.05,1.05);
+        }
+    }
+
+    &__card--delete {
+        background-color: inherit;
+        box-shadow: none;
+        color: rgba($color-delete, .6);
+        font-size: 2.4rem;
+        cursor: pointer;
+
+        &:hover,
+        &:focus {
+            color: $color-delete-hover;
+            transform: scale(1.15,1.15);
+            box-shadow: none;
+        }
+    }
+
+    &-submit {
+        padding: 1rem;
+        background-color: rgba($color-primary, .9);
+        margin: 0 auto;
+        box-shadow: $shadow-light, 0px 12px 15px -15px $color-grey-dark-3;
+        transform: translateY(10%);
+
+        &:hover {
+            box-shadow: $shadow-light, 0px 30px 15px -15px $color-grey-dark-3;
+            transform: translateY(-10%) scale(1.05,1.05);
+        }
+    }
+
+    &-dd-submit {
+        background-color: rgba($color-primary-light, .9);
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        box-shadow: none;
+
+        &:active,
+        &:focus,
+        &:hover {
+            color: $color-grey-light-1;
+            transform: translateY(0);
+            box-shadow: none;
+        }
+        &:hover {
+            color: $color-grey-dark-2;
+        }
+    }
+
+    // BUTTON REFLECTION
+    // &-reflection-parent {
+    //     filter: drop-shadow(0px 2px 2px $color-primary-light);
+    //     perspective: 7rem;
+        
+    //     .btn-reflection {
+    //         display: inline-block;
+    //         width: 130%;
+    //         height: 40px;
+    //         padding: .6rem;
+    //         text-align: center;
+    //         color: #faf9f9;
+    //         background: linear-gradient(to bottom, #fff, $color-primary-light);
+    //         transform: translate(-9%, 10%) scaleY(-1) rotateX(-48deg) skewX(-10deg);
+    //         opacity: .3;
+    //     }
+    // }
+    // BUTTON REFLECTION
+
+}
+
+.form-file--input {
+    margin-left: 10px;
+}
+
+.file__input {
+    opacity: 0;
+    width: 0.1px;
+    height: 0.1px;
+    position: absolute;
+
+    &:hover + .file__input--label,
+    &:focus + .file__input--label {
+        transform: scale(1.02);
+    }
+
+    &:focus + .file__input--label {
+        outline: 1px solid #000;
+        outline: -webkit-focus-ring-color auto 2px;
+    }
+}
+
+.file__input--label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #fff;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 5px 15px;
+    border-radius: 3px;
+    // background: linear-gradient(40deg, #ff6ec4, #7873f5);
+    background-color: $color-primary-light;
+    box-shadow: $shadow-light;
+    transition: transform .2s ease-out;
+
+    .file__name {
+        position: absolute;
+        right: -80px;
+        // left: 10px;
+        margin: 0 auto;
+        font-size: 1.2rem;
+        color: #555;
+    }
+}

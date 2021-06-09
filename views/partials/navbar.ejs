@@ -1,0 +1,61 @@
+
+<script src="/public/script/navbar.js" type="module"></script>
+
+<div class="header__main">
+    <div class="logo">
+        <a class="logo__link" href="/">
+            <span>Map'NFly</span> <!-- also I used it for :after content animation in _logo.scss-->
+        </a>
+    </div>
+
+    <!-- <div class="back-activity"></div> --> <!-- animation for whole width of the header -->
+    <% if ( currentUser ) { %>
+        <div class="navbar">
+            <!-- when not logged in store to local storage or cookies or sessions ??? -->
+            <!-- DROP DOWN FORM -->
+            <a class="navbar__link navbar__link--new" href="#" onclick="newSessionForm(event)">
+                New Session
+            </a>
+            
+
+            <!-- only when logged in -->
+            <a class="navbar__link navbar__link--all" href="/sessions">
+                All Sessions
+            </a>
+        </div>
+    <% } %> 
+</div>
+
+<!-- <div class="header__search">
+    <form class="search">
+        <input class="search__input" type="search" placeholder="Search the map" />
+        <button class="search__btn" type="submit">
+            <svg class="search__icon">
+                <use xlink:href="#icon-magnifying-glass"></use>
+            </svg>
+        </button>
+    </form>
+</div> -->
+
+<% if ( !currentUser ) { %>
+    <div class="header__login">
+        <div class="login">
+            <a href="#" class="login__link signup-user" onclick="newUser(event)">Sign Up</a>
+            <a href="#" class="login__link login-user" onclick="logInUser(event)">Log In</a>
+        </div>
+    </div>
+<% } %>
+
+<% if ( currentUser ) { %> 
+    <div class="header__user">
+        <button class="user-dropdown" onclick="userNavToggle()">
+            <%= currentUser.username %>
+        </button>
+        <div class="user-dropdown__menu" id="dropdown-menu">
+            <a class="dropdown__item" href="#">Account details</a>
+            <a class="dropdown__item" href="/sessions">All sessions</a>
+            <hr class="dropdown__divider" />
+            <a class="dropdown__item" href="/logout">Log Out</a>
+        </div>
+    </div>
+<% } %> 

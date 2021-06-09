@@ -1,0 +1,55 @@
+/* Position the image container (needed to position the left and right arrows) */
+.card__images--view {
+  position: relative;
+}
+
+/* Hide the images by default */
+.card--img {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prevImg,
+.nextImg {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  top: 0;
+  width: auto;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 3px 0 0 3px;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.prevImg {
+  padding: 0 10px 0 5px;
+}
+/* Position the "next button" to the right */
+.nextImg{
+  right: 0;
+  padding: 0 5px 0 10px;
+  border-radius: 0 3px 3px 0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prevImg:hover {
+  background-image: linear-gradient(to left, transparent, $color-grey-dark-1);
+}
+.nextImg:hover {
+  background-image: linear-gradient(to right, transparent, $color-grey-dark-1);
+}
+
+/* Number text (1/3 etc) */
+.card--numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}

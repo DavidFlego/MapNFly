@@ -1,0 +1,84 @@
+<% layout('layouts/boilerplate') %>
+<script src="/public/script/form.js" type="module"></script>
+
+<div class="card__header card__header--onshow">
+    <h1 class="card__title">New Session</h1>
+</div>
+
+<div class="form-container">
+    <form class="form" action="/sessions" method="POST" enctype="multipart/form-data" novalidate>
+        <div class="form-group">
+            <div class="form-title form-control">
+                <label class="form__label" for="title">Title</label>
+                <!-- onkeydown="return event.key != 'Enter';" -->
+                <input class="form__input form__input--required" type="text" id="title" name="session[title]" placeholder="New Session"
+                    autofocus required />
+                <i class="far fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <p class="error-msg">Error message</p>
+                <!-- <span></span> -->
+            </div>
+            <div class="form-user form-control">
+                <label class="form__label" for="user">Username/Rider</label>
+                <input class="form__input form__input--required" type="text" id="user" name="session[user]" placeholder="Username/Rider"
+                required />
+                <i class="far fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <p class="error-msg">Error message</p>
+                <!-- <span></span> -->
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <div class="form-location form-control">
+                <label class="form__label" for="location">Location</label>
+                <input class="form__input form__input--required" type="text" id="location" name="session[location]"
+                    placeholder="Location of your session" required
+                    value="<%= location %>"/>
+                <i class="far fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <p class="error-msg">Error message</p>
+                <!-- <span></span> -->
+            </div>
+
+            <div class="form-duration form-control">
+                <label class="form__label" for="duration">Duration</label>
+                <input class="form__input form__input--required" type="number" id="duration" name="session[duration]"
+                    placeholder="Session duration" required />
+                <span></span> <!-- minutes-->
+                <i class="far fa-check-circle"></i>
+                <i class="fas fa-exclamation-circle"></i>
+                <p class="error-msg">Error message</p>
+            </div>
+
+        </div>
+
+        <div class="form-group form-description">
+            <label class="form__label" for="description"></label>
+            <textarea class="form__input form__input--required" name="session[description]" id="description" cols="30" rows="3"
+                placeholder="Describe your experience on this spot..."></textarea>
+        </div>
+
+        <div class="form-group form-file--input">
+            <input class="file__input" type="file" name="image" id="file-input" multiple>
+            <label class="file__input--label" for="file-input">
+                Upload new photo
+                <p class="file__name"></p>
+            </label>
+        </div>
+
+        <div class="rating-group">
+            <%- include('../partials/star-rating') %>
+        </div>
+
+        <div class="form-group form-submit">
+            <button class="btn btn-submit">Save your session</button>
+            <!-- BUTTON REFLECTION -->
+            <!-- <span class="btn-reflection-parent">
+                <span class="btn-reflection">Save your session</span>
+            </span> -->
+            <!-- BUTTON REFLECTION -->
+        </div>
+    </form>
+</div>

@@ -1,0 +1,43 @@
+// COOlors
+// https://coolors.co/587291-2f97c1-1ccad8-15e6cd-0cf574
+$queen-blue: rgba(88, 114, 145, 1);
+
+// FONT
+$default-font-size: 1.6rem;
+
+//COLORS
+
+$color-primary: rgb(47, 151, 193); //  #2f97c1  $blue-green:
+$color-primary-light: rgb(58, 173, 177); // #3aadb1
+    // $color-primary-light: rgb(63, 178, 206); // #3fb2ce
+$color-primary-dark: rgb(0, 114, 139);  // #00728b
+
+$color-save: rgb(86, 185, 90); // $
+$color-delete: rgb(238, 43, 69); // $
+$color-delete-hover: rgb(223, 22, 11); // $
+$color-alert: rgb(248, 215, 218);
+$color-warning: rgb(242, 174, 69); // $jasmine: rgba(247, 221, 114, 1);
+
+$color-grey-light-1: #faf9f9;
+$color-grey-light-2: #f4f2f2;
+$color-grey-light-3: #f0eeee;
+$color-grey-light-4: #ccc;
+
+$color-grey-dark-1: #0f0f0f;
+$color-grey-dark-2: #333;
+$color-grey-dark-3: #777;
+$color-grey-dark-4: #999;
+
+$color-white: #fff;
+$color-black: #000;
+
+$shadow-light: 0 0.8rem 1rem rgba(0, 0, 0, 0.1);
+$shadow-dark: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
+
+
+
+// RESPONSE BREAKPOINTS
+$bp-largest: 75em;      // 1200 / 16 = 75
+$bp-large: 68.75em;     // 1100
+$bp-medium: 56.25em;    // 900px
+$bp-small: 37.5em;      // 600px

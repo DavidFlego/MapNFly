@@ -1,0 +1,141 @@
+<script src="/public/script/navbar-forms.js" type="module"></script>
+
+<% if (currentUser) { %> 
+
+<form class="dd-form" id="dd-new-form" action="/sessions" method="POST" enctype="multipart/form-data">
+
+    <div class="dd-group dd-title innactive">
+        <input class="dd__input dd__in new-ses__input" type="text" id="dd-title" name="session[title]" required />
+        <label class="dd__label" for="dd-title">Name your session</label>
+        <span></span>
+    </div>
+
+    <div class="dd-group dd-user innactive">
+        <input class="dd__input dd__in new-ses__input" type="text" id="dd-user" name="session[user]" required/>
+        <label class="dd__label" for="dd-user">Rider</label>
+    </div>
+
+    <div class="dd-group dd-location innactive">
+        <input class="dd__input dd__in new-ses__input" type="text" id="dd-location" name="session[location]" required />
+        <label class="dd__label" for="dd-location">Location of your session</label>
+        <span></span>
+    </div>
+
+    <div class="dd-group dd-duration innactive">
+        <input class="dd__input dd__in new-ses__input" type="number" id="dd-duration" name="session[duration]" required />
+        <label class="dd__label" for="dd-duration">Session duration</label>
+        <span></span>
+    </div>
+
+    <div class="dd-group dd-description innactive">
+        <input class="dd__input dd__in new-ses__input" name="session[description]" id="dd-description" cols="30" rows="3"/>
+        <label class="dd__label" for="dd-description">Describe your experience on this spot...</label>
+        <span></span>
+    </div>
+
+
+
+    <div class="dd-group form-file--input">
+        <input class="dd__input dd__file-input dd__in new-ses__input" type="file" name="image" id="dd__file-input" multiple>
+        <label class="dd__input--label" for="dd__file-input">
+            Upload new photo
+            <p class="dd__file-name"></p>
+        </label>
+    </div>
+
+
+
+
+    <div class="dd-group dd-rating innactive">
+        <div class="dd__input dd-rating-group">
+    
+            <!-- 0  star rating  ALSO checked-->
+            <label aria-label="0 stars" class="dd-rating__label" for="dd-rating-0">&nbsp;</label>
+            <input class="dd__in new-ses__input dd-rating__input dd-rating__input--none" name="session[rating]" id="dd-rating-0" value="0" type="radio" checked>
+    
+            <!-- 0.5 star rating -->
+            <label aria-label="0.5 stars" class="dd-rating__label dd-rating__label--half" for="dd-rating-05">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star-half"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-05" value="0.5" type="radio">
+    
+            <!-- 1 star rating -->
+            <label aria-label="1 star" class="dd-rating__label" for="dd-rating-10">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-10" value="1" type="radio">
+    
+            <!-- 1.5 star rating -->
+            <label aria-label="1.5 stars" class="dd-rating__label dd-rating__label--half" for="dd-rating-15">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star-half"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-15" value="1.5" type="radio">
+    
+            <!-- 2 star rating -->
+            <label aria-label="2 stars" class="dd-rating__label" for="dd-rating-20">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-20" value="2" type="radio">
+    
+            <!-- 2.5 star rating -->
+            <label aria-label="2.5 stars" class="dd-rating__label dd-rating__label--half" for="dd-rating-25">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star-half"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-25" value="2.5" type="radio">
+    
+            <!-- 3 star rating -->
+            <label aria-label="3 stars" class="dd-rating__label" for="dd-rating-30">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-30" value="3" type="radio">
+    
+            <!-- 3.5 star rating -->
+            <label aria-label="3.5 stars" class="dd-rating__label dd-rating__label--half" for="dd-rating-35">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star-half"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-35" value="3.5" type="radio">
+    
+            <!-- 4 star rating -->
+            <label aria-label="4 stars" class="dd-rating__label" for="dd-rating-40">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-40" value="4" type="radio">
+    
+            <!-- 4.5 star rating -->
+            <label aria-label="4.5 stars" class="dd-rating__label dd-rating__label--half" for="dd-rating-45">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star-half"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-45" value="4.5" type="radio">
+    
+            <!-- 5 star rating -->
+            <label aria-label="5 stars" class="dd-rating__label" for="dd-rating-50">
+                <i class="dd-rating__icon dd-rating__icon--star fas fa-star"></i>
+            </label>
+            <input class="dd-rating__input" name="session[rating]" id="dd-rating-50" value="5" type="radio">
+    
+        </div>
+    </div>
+
+    <!-- <div class="dd-group dd-rating innactive">
+        <div class="dd__input dd-rating-group">
+            <%# include('./star-rating') %>
+        </div>
+    </div> -->
+
+    <div class="dd-group dd-submit innactive">
+        <button class="dd__in new-ses__input btn btn-dd-submit" id="btn-submit">Last Step!!! SAVE</button>
+    </div>
+    
+    <!-- <div class="dd-group dd-success innactive">
+        <p class="dd-success-msg">Checking if all is good...</p>
+    </div> -->
+</form>
+
+<script>
+    const file = document.querySelector('.dd__file-input');
+        file.addEventListener('change', (e) => {
+            document.querySelector('.dd__file-name').textContent = `${e.target.files.length} files selected`;
+        });
+</script>
+
+<% } %>

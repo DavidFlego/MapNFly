@@ -1,0 +1,78 @@
+<% layout('layouts/boilerplate') %>
+
+<div class="card__header card__header--onshow">
+    <h1 class="card__title">All My Sessions</h1>
+    <a href="/sessions/new" class="btn btn-edit new-session-link">New Session</a>
+</div>
+
+<div class="card">
+    <% for (let session of user.sessions) { %>
+        <div class="card__body">
+
+            <div class="card__images">
+                <% if ( session.images.length > 0 ) { %>
+                    <img src="<%= session.images[0].url %> " alt="...">
+                <% } else { %>
+                    <p>No photos uploaded, yet! ;) </p>
+                <% } %>  
+            </div>
+
+            <div class="card__details">
+                <div class="card__header">
+                    <h2 class="card__header--main"><%= session.title %></h3>
+                    <p class="card__header--sub">
+                        Duration: <%= session.duration %> min.
+                    </p>
+                </div>
+
+                <!-- onclick="sessionExpand(session)" idea to expand it in the middle of the map/screen   -->
+                <div class="card__description">
+                    <p> With duration of <%= session.duration %> minutes. </p>
+                    <p> <%= session.description %> </p>
+                </div>
+
+                <p class="card__location">
+                    <% if ( !(/[a-zA-Z]/g.test(session.location)) ) { %> <!-- If no letter was found -->
+                        Custom location - Session from
+                    <% } else { %>
+                        <%= session.location %> - Session from
+                    <% } %>
+                    
+                    <% if ( session.numOfDaysCreated == 0 ) { %>
+                        Today
+                    <% } else if ( session.numOfDaysCreated==1 ) { %>
+                        <%= session.numOfDaysCreated %> day ago
+                    <% } else if ( session.numOfDaysCreated> 1 ) { %>
+                        <%= session.numOfDaysCreated %> days ago
+                    <% } %>
+                </p>
+                <p class="card__rating-number">
+                    <%= session.rating %>
+                </p>
+                
+                <%# include('../partials/star-rating', { rating: session.rating }) %>
+
+                <div class="card__actions">
+                    <form action="/sessions/<%=session._id%>">
+                        <button class="btn btn-view">
+                            View
+                        </button>
+                    </form>
+                    <form action="/sessions/<%=session._id%>/edit">
+                        <button class="btn btn-edit">
+                            Edit
+                        </button>
+                    </form>
+                </div>
+
+                <div class="card__delete">
+                    <form class="card--delete" action="/sessions/<%=session._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn__card--delete">
+                            <i class="fas fa-times-circle"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>

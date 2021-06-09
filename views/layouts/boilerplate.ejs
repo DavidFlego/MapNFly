@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+
+        <!-- MAPBOX maps -->
+        <script src='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v2.2.0/mapbox-gl.css' rel='stylesheet' />
+        <!-- Load the `mapbox-gl-geocoder` plugin. -->
+        <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+
+
+        <!-- ICOMOON ICONS -->
+        <%- include('../../assets/icons/icons.svg')  %> 
+
+        <!-- FONT AWESOME -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+        <!-- MAIN CSS -->
+        <link rel="stylesheet" type="text/css" href="/css/styles.css">
+        
+        <title>Map'NFly</title>
+    </head>
+
+    <body class="body-container">
+
+        <header class="header">
+            <%- include('../partials/navbar') %>
+        </header>
+        
+        <main class="main-container">
+            <%- include('../partials/flash') %>
+            <%- include('../sessions/dd-new-ses') %>
+            <%- include('../users/dd-register') %>
+            <%- include('../users/dd-login') %>
+            <%- body %>
+        </main>
+
+        <footer class="footer">
+            <%- include('../partials/footer')  %>
+        </footer>
+        
+    </body>
+</html>

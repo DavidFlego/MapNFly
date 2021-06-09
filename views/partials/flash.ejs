@@ -1,0 +1,61 @@
+<script src="/public/script/flash.js"></script>
+
+<!-- this are for flash messages for SESSION FORM etc -->
+<% if ( successUser && successUser.length ) { %>
+    <div class="alert alert-right alert-success" role="alert">
+        <p>
+            <%= successUser %>
+        </p>
+        <button type="button" class="alert-close" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+<% } %>
+<% if ( successSession && successSession.length ) { %>
+    <div class="alert alert-left alert-success" role="alert">
+        <p>
+            <%= successSession %>
+        </p>
+        <button type="button" class="alert-close" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+<% } %>
+    
+<!-- this are for flash messages for USERS -->
+<% if ( errorUser && errorUser.length ) { %>
+    <div class="alert alert-right alert-error" role="alert">
+        <p>
+            <%= errorUser %>
+        </p>
+        <button type="button" class="alert-close" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+<% } %>
+
+<% if ( errorSession && errorSession.length ) { %>
+    <div class="alert alert-left alert-error" role="alert">
+        <p>
+            <%= errorSession %>
+        </p>
+        <button type="button" class="alert-close" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+<% } %>
+
+<!-- this one is for build in passport authorisation -->
+<% if ( error && error.length ) { %>
+    <div class="alert alert-right alert-error" role="alert">
+        <p>
+            <%= error %>
+        </p>
+        <button type="button" class="alert-close" onclick="closeAlert()">
+            <span>&times;</span>
+        </button>
+    </div>
+<% } %>
+
+
+

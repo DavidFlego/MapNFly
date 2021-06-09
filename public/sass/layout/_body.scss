@@ -1,0 +1,21 @@
+.body-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 5px;
+    position: relative;
+    // FIXED HEADER POSITION
+    padding-top: 30px;
+}
+
+.main-container {
+    font-size: 1.4rem;
+    width: 60vw;
+    margin: 2rem auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

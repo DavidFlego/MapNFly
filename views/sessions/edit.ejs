@@ -1,0 +1,137 @@
+<% layout('layouts/boilerplate') %>
+<script src="/public/script/form.js" type="module"></script>
+<script src="/public/script/img-slider.js" type="module"></script>
+
+
+<div class="card__header card__header--onshow">
+    <h1 class="card__title">Edit Session</h1>
+    <p><%=session.title%></p>
+    <div class="card__created">
+        <p>
+            created -
+            <%= session.created_at %>
+        </p>
+    </div>
+</div>
+
+<div class="form-container">
+    <form class="form" action="/sessions/<%=session._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <div class="form-title">
+                <label class="form__label" for="title">Title</label>
+                <input
+                    class="form__input"
+                    type="text"
+                    id="title"
+                    name="session[title]"
+                    value="<%=session.title%>"
+                    required
+                />
+                <span></span>
+            </div>
+            <div class="form-user">
+                <label class="form__label" for="user">Username/Rider</label>
+                <input
+                    class="form__input"
+                    type="text"
+                    id="user"
+                    name="session[user]"
+                    value="<%=session.user%>"
+                    required
+                />
+            </div>
+            
+        </div>
+
+        <div class="form-group">
+            <div class="form-location">
+                <label class="form__label" for="location">Location</label>
+                <input
+                    class="form__input"
+                    type="text"
+                    id="location"
+                    name="session[location]"
+                    value="<%=session.location%>"
+                    required
+                />
+                <span></span>
+            </div>
+            <div class="form-duration">
+                <label class="form__label" for="duration">Duration</label>
+                <input
+                    class="form__input"
+                    type="text"
+                    id="duration"
+                    name="session[duration]"
+                    placeholder="Session duration"
+                    value="<%=session.duration%>"
+                    required
+                />
+                <span></span>
+            </div>
+        </div>
+
+        <div class="form-group form-description">
+            <label class="form__label" for="description">Description</label>
+            <textarea 
+                class="form__input"
+                name="session[description]" 
+                id="description" 
+                cols="30" rows="3"
+            ><%=session.description%></textarea>
+        </div>
+
+        <div class="form-group">
+            <div class="form-file--input">
+                <input class="file__input" type="file" name="image" id="file-input" multiple>
+                <label class="file__input--label" for="file-input">
+                    Upload new photo
+                    <p class="file__name"></p>
+                </label>
+            </div>
+            
+            <div class="rating-group">
+                <%- include('../partials/star-rating', { rating }) %>
+            </div>
+        </div>
+
+        
+        <!-- images -->
+
+        <div class="form-group form-submit">
+            <button class="btn btn-submit">Save your changes</button>
+        </div>
+        <div class="form-group form-cancel">
+            <a href="/sessions/<%=session._id%>">Back to session</a>
+        </div>
+    </form>
+
+    <div class="card__images card__images--edit">
+        <% session.images.forEach((img, i)=> { %>
+            <div class="card--img">
+                <div class="card--numbertext">
+                    <%= i + 1 %> / <%= session.images.length %>
+                </div>
+                <img src="<%= img.thumbnail %> " alt="...">
+                <!-- <input class="card-img--input" type="button" id="image<%=i%>">
+                <label class="btn__card--delete card-img--delete" for="image<%=i%>">
+                    <i class="fas fa-times-circle"></i>
+                </label> -->
+    
+                <form action="/sessions/<%=session._id%>/image/<%=img.imgToDelete%>?_method=PUT" method="POST">
+                    <button class="btn btn__card--delete card-img--delete">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                </form>
+    
+            </div>
+        <% }) %>
+    
+        <% if (session.images.length> 1) { %>
+            <a class="prevImg" onclick="nextImg(-1)"><i class='fas fa-angle-left'></i></a>
+            <a class="nextImg" onclick="nextImg(1)"><i class='fas fa-angle-right'></i></a>
+        <% } %>
+    </div>
+
+</div>

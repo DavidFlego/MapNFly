@@ -1,0 +1,65 @@
+////////////////////
+// SEARCH BOX
+    
+.search {
+    display: flex;
+
+    &__input {
+        font-family: inherit;
+        font-size: inherit;
+        color: $color-grey-dark-2;
+        font-size: 1.6rem;
+        background-color: $color-grey-light-2;
+        padding: .7rem 2rem;
+        border: none;
+        border-radius: 100px;
+        width: 25vw;
+        transition: width .3s;
+        margin-right: -3rem; // move button to the left above input
+
+        &:focus {
+            outline: none;
+            width: 26vw;
+            background-color: $color-grey-light-3;
+        }
+
+        &::-webkit-input-placeholder {
+            font-weight: 100;
+            color: $color-grey-dark-1;
+        }
+    }
+
+    // &__input:focus + &__btn {
+    //     background-color: $color-grey-light-3;
+    // }
+
+    &__btn {
+        border: none;
+        border-radius: 40%;
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+
+        &:active {
+            transform: translateY(2px);
+        }
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+        fill: $color-grey-dark-2;
+    }
+}
+
+
+/* clears the ‘X’ from Internet Explorer */
+input[type=search]::-ms-clear { display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal { display: none; width : 0; height: 0; }
+/* clears the ‘X’ from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }

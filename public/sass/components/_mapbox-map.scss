@@ -1,0 +1,77 @@
+.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group{
+    margin: 0 20px 50px 0;
+}
+
+.mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-attrib {
+    margin: 0 10px 10px 0;
+}
+
+.mapboxgl-popup-content {
+    background-color: rgba($color-primary-light, .7);
+    padding: 10px;
+    text-align: center;
+
+    & .popup__title {
+        color: $color-grey-light-1;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-decoration: none;
+        border-bottom: 1px solid $color-grey-light-1;
+
+        &:hover {
+            color: $color-grey-dark-2;
+        }
+    }
+
+    & .popup__location {
+        color: $color-grey-light-1;
+    }
+
+    & button.mapboxgl-popup-close-button {
+        padding: 2px;
+        color: $color-grey-light-1;
+        font-size: 2rem;
+        line-height: 1.2rem;
+        border-radius: 0 3px 0 3px;
+
+        &:hover {
+            color: $color-grey-dark-2;
+        }
+    }
+}
+
+.mapboxgl-popup-anchor-bottom .mapboxgl-popup-tip {
+    border-top-color: rgba($color-primary-light, .7);
+}
+
+.new-session-popup {
+
+    .mapboxgl-popup-content {
+        border-radius: 50px;
+
+        .new-session-popup--link {
+            color: $color-grey-dark-1;
+            text-decoration: none;
+            font-size: 1.4rem;
+
+            &:hover {
+                color: $color-grey-light-1;
+            }
+        }
+        
+        .mapboxgl-popup-close-button {
+            position: absolute;
+            right: -12px;
+            top: -11px;
+            width: 20px;
+            height: 20px;
+            color: $color-grey-dark-1;
+            background-color: rgba($color-primary-light, .7);
+            border-radius: 50px;
+
+            &:hover {
+                color: $color-grey-light-1;
+            }
+        }
+    }
+}

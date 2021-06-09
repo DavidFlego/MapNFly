@@ -1,0 +1,20 @@
+<% layout('layouts/boilerplate') %>
+
+
+<div id="map" class="cluster--map"></div>
+
+<div id="geocoder"></div>
+
+<script>
+    const mapBoxToken = '<%-process.env.MAPBOX_TOKEN%>';
+    let sessions;
+
+    <% if ( user == "undefined" ) { %>
+        sessions = null;
+    <% } else { %>
+        sessions = { features: <%- JSON.stringify(user.sessions) %> }
+    <% } %>
+   
+</script>
+
+<script src="/script/home.js"></script>

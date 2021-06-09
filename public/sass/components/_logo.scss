@@ -1,0 +1,44 @@
+.logo {
+    margin: 0 2.4rem;
+
+    &__link {
+        font-size: 3.4rem;
+        font-weight: 400;
+        
+        & span {
+            color: $color-grey-dark-1;
+            @include logBackgroundImage;
+            background-clip: text;
+            -webkit-background-clip: text;
+            background-position-x: -40%;
+            -webkit-background-position-x: -20%;
+            background-size: 30%;
+            background-repeat: no-repeat;
+            background-color: $color-grey-dark-1;
+            transform: skew(-30deg);
+            color: transparent;
+        }
+
+        & span:hover {
+            background-position-x: 140%;
+            transition: background .6s linear;
+        }
+    }
+    
+    // SAME ANIMATION AS ON .BACK-ACTIVITY ELEMENT EXCEPT THIS ONE IS OVERFLOWING .HEADER ELEMENT
+    // &::after {
+    //     content: "";
+    //     position: absolute;
+    //     top: 10px;
+    //     left: 85px;
+    //     box-shadow: 0 0 30px 54px rgba(223, 222, 222, 0.2), 
+    //                 0 0 30px 11px rgba(224, 224, 224, 0.7);
+    //     transform: skew(-30deg);
+    //     z-index: 1;
+    // }
+
+    // &:hover::after { 
+    //     -webkit-animation: headerWaveAnimation .8s linear;
+    //     animation: headerWaveAnimation .8s linear;
+    // }
+}

@@ -1,0 +1,96 @@
+<% layout('layouts/boilerplate') %>
+
+<script src="/public/script/img-slider.js" type="module"></script>
+
+
+<div class="card__header card__header--onshow">
+    <h1 class="card__title"><%= session.title %></h3>
+    <p class="card__duration">
+        Duration: <%= session.duration %> min.
+    </p>
+</div>
+
+<div class="card">
+    
+    <div class="card__body">
+
+        <div class="card__images card__images--view">
+            <% if ( session.images.length> 0 ) { %>
+                <% session.images.forEach((img, i) => { %>
+                    <div class="card--img">
+                        <div class="card--numbertext"> <%= i + 1 %> / <%= session.images.length %>  </div>
+                        <img src="<%= img.url %> " alt="...">
+                    </div>
+                <% }) %>
+            <% } else { %>
+                <p>No photos uploaded, yet! ;) </p>
+            <% } %>
+            
+            <% if (session.images.length > 1) { %>
+                <a class="prevImg" onclick="nextImg(-1)"><i class='fas fa-angle-left'></i></a>
+                <a class="nextImg" onclick="nextImg(1)"><i class='fas fa-angle-right'></i></a>
+            <% } %> 
+        
+        </div>
+
+        <div class="card__details">
+            <div class="card__description">
+                <p>
+                    <%= session.description %>
+                </p>
+            </div>
+            
+            <div class="card__location">
+                <p>
+                    <% if ( !(/[a-zA-Z]/g.test(session.location)) ) { %> <!-- If no letter was found -->
+                        Custom location - Session from
+                    <% } else { %>
+                        <%= session.location %> - Session from
+                    <% } %>
+                    <% if ( session.numOfDaysCreated==0 ) { %>
+                        Today
+                    <% } else if ( session.numOfDaysCreated==1 ) { %>
+                        <%= session.numOfDaysCreated %> day ago
+                    <% } else if ( session.numOfDaysCreated> 1 ) { %>
+                        <%= session.numOfDaysCreated %> days ago
+                    <% } %>
+                </p>
+            </div>
+            
+            <div class="card__rating-stars rating-group">
+                <%- include('../partials/star-rating', { rating }) %>
+            </div>
+            
+            <div class="card__actions">
+                <form action="/sessions">
+                    <button class="btn btn-view">
+                        All sessions
+                    </button>
+                </form>
+                <form action="/sessions/<%=session._id%>/edit">
+                    <button class="btn btn-edit">
+                        Edit
+                    </button>
+                </form>
+            </div>
+
+            <div class="card__delete">
+                <form class="card--delete" action="/sessions/<%=session._id%>?_method=DELETE" method="POST">
+                    <button class="btn btn__card--delete">
+                        <i class="fas fa-times-circle"></i>
+                    </button>
+                </form>
+            </div>
+        </div> <!-- .card__details -->
+
+    </div> <!-- .card__body -->
+    
+    <div class="card__map" id='map'></div>
+
+</div>
+<script>
+    const mapBoxToken = '<%-process.env.MAPBOX_TOKEN%>';
+    const session = <%-JSON.stringify(session)%>;
+</script>
+
+<script src="/script/show-page-map.js"></script>
