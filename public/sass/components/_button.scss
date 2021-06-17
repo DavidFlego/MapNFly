@@ -121,6 +121,10 @@
 
 .form-file--input {
     margin-left: 10px;
+
+    @include respond(tab-port) { 
+        margin: 0;
+    }
 }
 
 .file__input {
@@ -162,5 +166,10 @@
         margin: 0 auto;
         font-size: 1.2rem;
         color: #555;
+
+        @include respond(tab-port) { 
+            right: initial;
+            top: 30px;
+        }
     }
 }

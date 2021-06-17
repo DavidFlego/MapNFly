@@ -4,7 +4,18 @@
     box-shadow:  0 0.1rem 9rem rgba($color-grey-dark-2, 0.1);
     padding: .8rem;
     border-radius: 4px;
-    width: 100%;
+    // width: 100%;
+    width: 60vw;
+
+    @include respond(tab-land) {
+        width: 70vw;
+    }
+    @include respond(tab-port) {
+        width: 80vw;
+    }
+    @include respond(phone) {
+        width: 90vw;
+    }
 
     &__header--onshow {
         text-align: center;
@@ -87,6 +98,10 @@
         position: absolute;
         bottom: 18px;
         padding-bottom: 0;
+        
+        @include respond(tab-port) {
+            left: 20px;
+        }
     }
 
     &__created {

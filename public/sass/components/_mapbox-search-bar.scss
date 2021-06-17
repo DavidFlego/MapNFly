@@ -17,6 +17,14 @@
   transition: width .3s;
   margin-right: -3rem; // move button to the left above input
 
+  @include respond(tab-land) { 
+    width: 30vw;
+  }
+
+  @include respond(phone) {
+    width: 35vw; 
+  }
+
   &::-ms-clear {
     display: none; /* hide input clear button in IE */
   }

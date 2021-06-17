@@ -40,6 +40,14 @@
     margin-right: -0.65em;
     z-index: 2;
     width: 15px;
+    
+    @include respond(tab-land) { 
+      width: 14px;
+    }
+    
+    @include respond(tab-port) { 
+      width: 13px;
+    }
   }
 
   // set color of none icon when unchecked 

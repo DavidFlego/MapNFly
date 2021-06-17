@@ -1,5 +1,15 @@
 .form-container {
-    min-width: 35vw;
+    min-width: 45vw;
+    
+    @include respond(tab-land) { 
+        min-width: 45vw;
+    }
+    @include respond(tab-port) { 
+        min-width: 65vw;
+    }
+    @include respond(phone) { 
+        min-width: 80vw;
+    }
 }
 
 .form {
@@ -13,11 +23,21 @@
         & > div {
             width: 100%;
             margin: 3px;
+            
+            @include respond(tab-port) { 
+                margin: 0;    
+            }
 
             &.form-file--input,
-            &.rating-group {
+            &.rating-group,
+            &.form-rating {
+                // max-width: fit-content;
                 width: inherit;
             }
+        }
+
+        @include respond(tab-port) { 
+            display: block;
         }
     }
 
@@ -85,6 +105,10 @@
             color: $color-grey-dark-2;
             opacity: 1;
             transition: opacity .3s ease;
+
+            @include respond(tab-land) { 
+                bottom: 8px;
+            }
         }
 
         &#duration:valid + span::after {
@@ -170,19 +194,30 @@
         display: block;
     }
 
-    &-rating {
-        display: flex;
-        // justify-content: center;
-        flex-direction: column;
-        align-items: center;
+    &-file--input {
+        display: inline-block;
+        
+        @include respond(tab-port) { 
+            display: initial;
+        }
+    }
 
-        .form__label {
-            margin: 0;
+    &-rating {
+        width: inherit;
+        display: inline-block;
+        float: right;
+
+        @include respond(tab-port) { 
+            display: block;
+            float: none;
+            margin: 2.2rem auto 2.2rem auto;
+            max-width: fit-content;
         }
     }
     
     &-submit {
         text-align: center;
+        clear: both;
 
         // TEST FOR BUTTON REFLECTION
         display: flex;

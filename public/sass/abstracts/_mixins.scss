@@ -41,22 +41,11 @@
 //// MEDIA QUERY MANAGER
 ////////////////////////////
 /*
-
 0 - 600px       PHONE
 600 - 900px     TABLET PORTRAIT
 900 - 1200px    TABLET LANDSCAPE
 [1200 - 1800px] our normal style apply
 1800px+         BIG DESKTOP
-
-$breakpoint argument choices
- - phone
- - tab-port
- - tab-lend
- - big-desktop
-
-
-ORDER: Base + typography
-
 */
 
 @mixin respond($breakpoint) {
