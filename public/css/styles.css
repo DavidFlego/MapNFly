@@ -26,8 +26,7 @@ html {
   /* Default browser font size is 16px 
        I want to be 10px  --  10 / 16 = 0.625
        0.625 * 100% = 62.5%
-    */
-  background-color: #1a1b1b; }
+    */ }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -595,9 +594,9 @@ input::-webkit-inner-spin-button {
       background-position-x: 140%;
       transition: background .6s linear; }
 
-@media only screen and (max-width: 56.25em) {
+@media only screen and (max-width: 75em) {
   .cluster--map {
-    height: 93vh !important; } }
+    height: 94vh !important; } }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group {
   margin: 0 20px 50px 0; }
@@ -1047,9 +1046,9 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 5px;
   position: relative;
   padding-top: 30px; }
-  @media only screen and (max-width: 56.25em) {
+  @media only screen and (max-width: 75em) {
     .body-container {
-      min-height: 93vh; } }
+      min-height: 94vh; } }
 
 .main-container {
   font-size: 1.4rem;
