@@ -599,7 +599,7 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 56.25em) {
   .cluster--map {
-    height: 93vh !important; } }
+    height: 93vh; } }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group {
   margin: 0 20px 50px 0; }
