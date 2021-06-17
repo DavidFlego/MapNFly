@@ -1,6 +1,9 @@
 .cluster--map {
     @include respond(tab-land) {
-        height: 94vh!important;
+        height: 92vh!important;
+    }
+    @include respond(tab-port) {
+        height: 93.5vh!important;
     }
 }
 

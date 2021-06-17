@@ -596,7 +596,11 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 75em) {
   .cluster--map {
-    height: 94vh !important; } }
+    height: 92vh !important; } }
+
+@media only screen and (max-width: 56.25em) {
+  .cluster--map {
+    height: 93.5vh !important; } }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group {
   margin: 0 20px 50px 0; }
@@ -1048,7 +1052,10 @@ input[type="search"]::-webkit-search-results-decoration {
   padding-top: 30px; }
   @media only screen and (max-width: 75em) {
     .body-container {
-      min-height: 94vh; } }
+      min-height: 92vh; } }
+  @media only screen and (max-width: 56.25em) {
+    .body-container {
+      height: 93.5vh; } }
 
 .main-container {
   font-size: 1.4rem;
