@@ -26,7 +26,8 @@ html {
   /* Default browser font size is 16px 
        I want to be 10px  --  10 / 16 = 0.625
        0.625 * 100% = 62.5%
-    */ }
+    */
+  background-color: #1a1b1b; }
   @media only screen and (max-width: 75em) {
     html {
       font-size: 56.25%; } }
@@ -36,9 +37,6 @@ html {
   @media only screen and (min-width: 112.5em) {
     html {
       font-size: 75%; } }
-
-body {
-  min-height: 100vh; }
 
 body {
   font-family: 'Lato', sans-serif;
