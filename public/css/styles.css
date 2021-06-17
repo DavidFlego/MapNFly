@@ -1049,6 +1049,9 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 5px;
   position: relative;
   padding-top: 30px; }
+  @media only screen and (max-width: 56.25em) {
+    .body-container {
+      height: 95vh; } }
 
 .main-container {
   font-size: 1.4rem;

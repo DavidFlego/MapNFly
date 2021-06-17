@@ -7,6 +7,9 @@
     position: relative;
     // FIXED HEADER POSITION
     padding-top: 30px;
+    @include respond(tab-port) {
+        height: 95vh;
+    }
 }
 
 .main-container {
