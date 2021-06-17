@@ -271,8 +271,13 @@ body {
     height: 300px;
     padding: 2rem;
     margin: 2rem;
+    box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
     border-radius: 16px;
-    box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.3); }
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    border-bottom-left-radius: 16x;
+    border-bottom-right-radius: 16px;
+    border-collapse: separate; }
 
 /* Position the image container (needed to position the left and right arrows) */
 .card__images--view {
@@ -1041,6 +1046,9 @@ input[type="search"]::-webkit-search-results-decoration {
   padding: 5px;
   position: relative;
   padding-top: 30px; }
+  @media only screen and (max-width: 75em) {
+    .body-container {
+      min-height: 90vh; } }
 
 .main-container {
   font-size: 1.4rem;

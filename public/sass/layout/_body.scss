@@ -7,6 +7,10 @@
     position: relative;
     // FIXED HEADER POSITION
     padding-top: 30px;
+
+    @include respond(tab-land) {
+        min-height: 90vh;
+    }
 }
 
 .main-container {
