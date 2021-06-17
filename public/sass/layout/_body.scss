@@ -8,7 +8,7 @@
     // FIXED HEADER POSITION
     padding-top: 30px;
     @include respond(tab-port) {
-        height: 95vh;
+        min-height: 93vh;
     }
 }
 
