@@ -4,10 +4,19 @@
     padding: 1.2rem;
     text-decoration: none;
     // text-transform: uppercase;
+
+    @include respond(phone) {
+        color: $color-grey-dark-2;
+        padding: .8rem;
+    }
 }
 
 @mixin hoverLinkStyle {
     color: $color-grey-dark-2;
+    
+    @include respond(phone) {
+        color: $color-grey-dark-3;
+    }
 }
 
 // ABSOLUTE CENTERING

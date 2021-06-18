@@ -9,7 +9,7 @@
     padding-top: 30px;
     
     @include respond(tab-land) {
-        min-height: 92vh;
+        min-height: 91.5vh;
     }
      @include respond(tab-port) {
         height: 93.5vh;

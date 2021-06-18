@@ -200,6 +200,9 @@ body {
     padding: 2rem;
     overflow: hidden;
     min-height: 270px; }
+    @media only screen and (max-width: 37.5em) {
+      .card__body {
+        display: block; } }
   .card__images {
     width: 36vw;
     display: inherit;
@@ -210,6 +213,10 @@ body {
       width: 90%;
       margin-right: 3rem;
       padding-left: 6px; }
+      @media only screen and (max-width: 37.5em) {
+        .card__images--view {
+          margin: auto;
+          padding: 0; } }
     .card__images p {
       width: 100%;
       text-align: center; }
@@ -233,6 +240,10 @@ body {
   .card__details {
     width: 100%;
     margin: 0 3rem; }
+    @media only screen and (max-width: 37.5em) {
+      .card__details {
+        width: auto;
+        text-align: center; } }
     .card__details > * {
       padding: .8rem; }
   .card__location {
@@ -243,6 +254,10 @@ body {
     @media only screen and (max-width: 56.25em) {
       .card__location {
         left: 20px; } }
+    @media only screen and (max-width: 37.5em) {
+      .card__location {
+        position: initial;
+        bottom: initial; } }
   .card__created {
     color: #999; }
   .card__rating-number {
@@ -260,6 +275,11 @@ body {
     bottom: 12px;
     right: 10px;
     padding: 0; }
+    @media only screen and (max-width: 37.5em) {
+      .card__actions {
+        position: initial;
+        bottom: initial;
+        right: initial; } }
   .card--delete {
     position: absolute;
     top: 0;
@@ -269,11 +289,13 @@ body {
     padding: 2rem;
     margin: 2rem;
     box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
-    border-top-left-radius: 16px;
-    border-top-right-radius: 16px;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    border-collapse: separate; }
+    border-radius: 16px; }
+    .card__map .mapboxgl-canvas {
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      border-bottom-left-radius: 16px;
+      border-bottom-right-radius: 16px;
+      border-collapse: separate; }
 
 /* Position the image container (needed to position the left and right arrows) */
 .card__images--view {
@@ -571,12 +593,18 @@ input::-webkit-inner-spin-button {
 .login {
   margin: 0 2.4rem; }
 
-.logo {
+.header__logo {
   margin: 0 2.4rem; }
-  .logo__link {
+  @media only screen and (max-width: 37.5em) {
+    .header__logo {
+      text-align: center; } }
+  .header__logo .logo__link {
     font-size: 3.4rem;
     font-weight: 400; }
-    .logo__link span {
+    @media only screen and (max-width: 37.5em) {
+      .header__logo .logo__link {
+        font-size: 2.4rem; } }
+    .header__logo .logo__link span {
       color: #0f0f0f;
       background-image: linear-gradient(-65deg, rgba(222, 222, 222, 0.05), rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.5), rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.05));
       background-image: -moz-linear-gradient(-65deg, rgba(222, 222, 222, 0.05), rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.5), rgba(222, 222, 222, 0.3), rgba(222, 222, 222, 0.05));
@@ -590,13 +618,13 @@ input::-webkit-inner-spin-button {
       background-color: #0f0f0f;
       transform: skew(-30deg);
       color: transparent; }
-    .logo__link span:hover {
+    .header__logo .logo__link span:hover {
       background-position-x: 140%;
       transition: background .6s linear; }
 
 @media only screen and (max-width: 75em) {
   .cluster--map {
-    height: 92vh !important; } }
+    height: 91.5vh !important; } }
 
 @media only screen and (max-width: 56.25em) {
   .cluster--map {
@@ -864,15 +892,20 @@ input[type="search"]::-webkit-search-results-decoration {
   border: none;
   outline: none;
   color: #f4f2f2;
-  padding: 1.2rem 1.6rem;
   z-index: 90;
   background-color: inherit;
   font-family: inherit;
   font-size: 1.4rem;
   margin: 0;
   width: 100%; }
+  @media only screen and (max-width: 37.5em) {
+    .user-dropdown {
+      color: #333; } }
   .user-dropdown:hover, .user-dropdown:focus {
     color: #333; }
+    @media only screen and (max-width: 37.5em) {
+      .user-dropdown:hover, .user-dropdown:focus {
+        color: #777; } }
   .user-dropdown span {
     font-size: 2rem; }
 
@@ -909,6 +942,9 @@ input[type="search"]::-webkit-search-results-decoration {
   transition: all .3s ease-out;
   opacity: 1;
   transform: translateY(0); }
+  @media only screen and (max-width: 37.5em) {
+    .user-menu__toggle {
+      transform: translateY(-24px); } }
 
 .rating-group,
 .dd-rating-group {
@@ -1052,7 +1088,7 @@ input[type="search"]::-webkit-search-results-decoration {
   padding-top: 30px; }
   @media only screen and (max-width: 75em) {
     .body-container {
-      min-height: 92vh; } }
+      min-height: 91.5vh; } }
   @media only screen and (max-width: 56.25em) {
     .body-container {
       height: 93.5vh; } }
@@ -1067,7 +1103,6 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   z-index: 100;
   font-size: 1.4rem;
@@ -1080,18 +1115,30 @@ input[type="search"]::-webkit-search-results-decoration {
   top: 5px;
   transform: translateX(-50%);
   width: 99.4vw; }
+  @media only screen and (max-width: 37.5em) {
+    .header {
+      display: initial;
+      height: 30px; } }
   .header__main {
     display: flex;
     align-items: center;
-    position: relative; }
+    justify-content: space-between;
+    position: relative;
+    width: 100%; }
   .header__main .logo__link,
   .header__main .navbar, .header__search, .header__login, .header__user {
     z-index: 10; }
+  @media only screen and (max-width: 37.5em) {
+    .header__main .navbar {
+      margin-left: 10px; } }
   .header__login {
     font-size: 1.4rem; }
   .header__user {
     position: relative;
     min-width: 160px; }
+    @media only screen and (max-width: 37.5em) {
+      .header__user {
+        min-width: 110px; } }
 
 .footer {
   display: flex;
@@ -1112,9 +1159,17 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #f4f2f2;
   padding: 1.2rem;
   text-decoration: none; }
+  @media only screen and (max-width: 37.5em) {
+    .header a[class*="link"]:link,
+    .header a[class*="link"]:visited {
+      color: #333;
+      padding: .8rem; } }
 
 .header a[class*="link"]:hover {
   color: #333; }
+  @media only screen and (max-width: 37.5em) {
+    .header a[class*="link"]:hover {
+      color: #777; } }
 
 .header a[class*="link"].active {
   color: #333; }

@@ -7,17 +7,25 @@
     border: none;
     outline: none;
     color: $color-grey-light-2;
-    padding: 1.2rem 1.6rem;
+    // padding: 1.2rem 1.6rem;
     z-index: 90;
     background-color: inherit;
     font-family: inherit;
     font-size: 1.4rem;
     margin: 0;
     width: 100%;
+    
+    @include respond(phone) {
+        color: $color-grey-dark-2;
+    }
 
     &:hover,
     &:focus {
         color: $color-grey-dark-2;
+
+        @include respond(phone) {
+            color: $color-grey-dark-3;
+        }
     }
 
     span {
@@ -68,4 +76,8 @@
     transition: all .3s ease-out;
     opacity: 1;
     transform: translateY(0);
+
+    @include respond(phone) {
+        transform: translateY(-24px);
+    }
 }

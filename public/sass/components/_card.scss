@@ -34,9 +34,9 @@
         overflow: hidden;
         min-height: 270px;
 
-        // & > * {
-        //     padding: .6rem;
-        // }
+        @include respond(phone) {
+            display: block;
+        }
     }
 
     &__images {
@@ -52,6 +52,11 @@
             // transform: scale(1.138);
             margin-right: 3rem;
             padding-left: 6px;
+
+            @include respond(phone) {
+                margin: auto;
+                padding: 0;
+            }
         }
 
         & p {
@@ -88,6 +93,11 @@
     &__details {
         width: 100%;
         margin: 0 3rem;
+
+        @include respond(phone) {
+            width: auto;
+            text-align: center;
+        }
         
         & > * {
             padding: .8rem;
@@ -102,6 +112,11 @@
         
         @include respond(tab-port) {
             left: 20px;
+        }
+
+        @include respond(phone) {
+            position: initial;
+            bottom: initial;
         }
     }
 
@@ -129,6 +144,12 @@
         bottom: 12px;
         right: 10px;
         padding: 0;
+        
+        @include respond(phone) {
+            position: initial;
+            bottom: initial;
+            right: initial;
+        }
     }
 
     &--delete {
@@ -142,12 +163,15 @@
         padding: 2rem; 
         margin: 2rem;
         box-shadow: $shadow-dark;
-        // border-radius: 16px;
+        border-radius: 16px;
 
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-        border-bottom-left-radius: 16px;
-        border-bottom-right-radius: 16px;
-        border-collapse: separate;
+        & .mapboxgl-canvas {
+            border-top-left-radius: 16px;
+            border-top-right-radius: 16px;
+            border-bottom-left-radius: 16px;
+            border-bottom-right-radius: 16px;
+            border-collapse: separate;
+        }
+        
     }
 }
