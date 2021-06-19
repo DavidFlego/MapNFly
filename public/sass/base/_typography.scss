@@ -25,7 +25,7 @@ body {
 
         @include respond(phone) {
             font-size: 2rem;
-            // letter-spacing: rem;
+            letter-spacing: .2rem;
         }
     }
 
@@ -36,5 +36,9 @@ body {
         letter-spacing: .6rem;
 
         // animation: nameIt time ease-out;
+        @include respond(phone) {
+            font-size: 1.2rem;
+            letter-spacing: .2rem;
+        }
     }
 }

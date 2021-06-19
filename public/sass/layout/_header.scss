@@ -17,7 +17,7 @@
 
     @include respond(phone) {
         display: initial;
-        height: 30px;
+        // height: 30px;
     }
 
     &__main {

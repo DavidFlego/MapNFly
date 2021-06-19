@@ -54,13 +54,18 @@ body {
   letter-spacing: .4rem; }
   @media only screen and (max-width: 37.5em) {
     .card__header--main {
-      font-size: 2rem; } }
+      font-size: 2rem;
+      letter-spacing: .2rem; } }
 
 .card__header--sub {
   display: block;
   font-size: 1.6rem;
   font-weight: 300;
   letter-spacing: .6rem; }
+  @media only screen and (max-width: 37.5em) {
+    .card__header--sub {
+      font-size: 1.2rem;
+      letter-spacing: .2rem; } }
 
 .btn, .btn:link, .btn:visited {
   position: relative;
@@ -106,6 +111,8 @@ body {
     color: #df160b;
     transform: scale(1.15, 1.15);
     box-shadow: none; }
+  .btn__card--delete-phone {
+    background-color: rgba(238, 43, 69, 0.6); }
 
 .btn-submit {
   padding: 1rem;
@@ -185,7 +192,8 @@ body {
       width: 80vw; } }
   @media only screen and (max-width: 37.5em) {
     .card {
-      width: 90vw; } }
+      width: 90vw;
+      box-shadow: none; } }
   .card__header--onshow {
     text-align: center;
     margin: 4rem; }
@@ -201,14 +209,25 @@ body {
     overflow: hidden;
     min-height: 270px; }
     @media only screen and (max-width: 37.5em) {
+      .card__body .card__header {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%);
+        top: 0;
+        width: 80%; } }
+    @media only screen and (max-width: 37.5em) {
       .card__body {
-        display: block; } }
+        display: block;
+        margin: 0; } }
   .card__images {
     width: 36vw;
     display: inherit;
     position: relative;
     margin: 0 auto;
     transform: scale(1); }
+    @media only screen and (max-width: 37.5em) {
+      .card__images {
+        margin: 40px auto 0 auto; } }
     .card__images--view {
       width: 90%;
       margin-right: 3rem;
@@ -279,11 +298,20 @@ body {
       .card__actions {
         position: initial;
         bottom: initial;
-        right: initial; } }
+        right: initial;
+        justify-content: center; } }
   .card--delete {
     position: absolute;
     top: 0;
     right: 0; }
+    @media only screen and (max-width: 37.5em) {
+      .card--delete {
+        display: none; } }
+    .card--delete--phone {
+      display: none; }
+      @media only screen and (max-width: 37.5em) {
+        .card--delete--phone {
+          display: initial; } }
   .card__map {
     height: 300px;
     padding: 2rem;
@@ -701,6 +729,9 @@ input::-webkit-inner-spin-button {
   @media only screen and (max-width: 75em) {
     .mapboxgl-ctrl-geocoder--input {
       width: 30vw; } }
+  @media only screen and (max-width: 56.25em) {
+    .mapboxgl-ctrl-geocoder--input {
+      width: 35vw; } }
   @media only screen and (max-width: 37.5em) {
     .mapboxgl-ctrl-geocoder--input {
       width: 35vw; } }
@@ -715,6 +746,15 @@ input::-webkit-inner-spin-button {
     outline: 0;
     box-shadow: none;
     outline: thin dotted; }
+    @media only screen and (max-width: 75em) {
+      .mapboxgl-ctrl-geocoder--input:focus {
+        width: 31vw; } }
+    @media only screen and (max-width: 56.25em) {
+      .mapboxgl-ctrl-geocoder--input:focus {
+        width: 36vw; } }
+    @media only screen and (max-width: 37.5em) {
+      .mapboxgl-ctrl-geocoder--input:focus {
+        width: 36vw; } }
 
 .mapboxgl-ctrl-geocoder .mapboxgl-ctrl-geocoder--pin-right > * {
   z-index: 2;
@@ -905,7 +945,7 @@ input[type="search"]::-webkit-search-results-decoration {
     color: #333; }
     @media only screen and (max-width: 37.5em) {
       .user-dropdown:hover, .user-dropdown:focus {
-        color: #777; } }
+        color: #f4f2f2; } }
   .user-dropdown span {
     font-size: 2rem; }
 
@@ -1117,8 +1157,7 @@ input[type="search"]::-webkit-search-results-decoration {
   width: 99.4vw; }
   @media only screen and (max-width: 37.5em) {
     .header {
-      display: initial;
-      height: 30px; } }
+      display: initial; } }
   .header__main {
     display: flex;
     align-items: center;
@@ -1169,7 +1208,7 @@ input[type="search"]::-webkit-search-results-decoration {
   color: #333; }
   @media only screen and (max-width: 37.5em) {
     .header a[class*="link"]:hover {
-      color: #777; } }
+      color: #f4f2f2; } }
 
 .header a[class*="link"].active {
   color: #333; }

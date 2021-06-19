@@ -64,6 +64,10 @@
             transform: scale(1.15,1.15);
             box-shadow: none;
         }
+
+        &-phone {
+            background-color: rgba($color-delete, .6);
+        }
     }
 
     &-submit {

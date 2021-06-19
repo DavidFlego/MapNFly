@@ -15,6 +15,7 @@
     }
     @include respond(phone) {
         width: 90vw;
+        box-shadow: none;
     }
 
     &__header--onshow {
@@ -34,8 +35,17 @@
         overflow: hidden;
         min-height: 270px;
 
+        & .card__header {
+            @include respond(phone) {
+                @include centerH;
+                top: 0;
+                width: 80%;
+            }
+        }
+
         @include respond(phone) {
             display: block;
+            margin: 0;
         }
     }
 
@@ -44,8 +54,11 @@
         display: inherit;
         position: relative;
         margin: 0 auto;
-
         transform: scale(1);
+
+        @include respond(phone) {
+            margin: 40px auto 0 auto;
+        }
 
         &--view {
             width: 90%;
@@ -149,6 +162,7 @@
             position: initial;
             bottom: initial;
             right: initial;
+            justify-content: center;
         }
     }
 
@@ -156,6 +170,18 @@
         position: absolute;
         top: 0;
         right: 0;
+
+        @include respond(phone) {
+            display: none;
+        }
+
+        &--phone {
+            display: none;
+
+            @include respond(phone) {
+                display: initial;
+            }
+        }
     }
 
     &__map {
