@@ -163,6 +163,10 @@
     box-shadow: $shadow-light;
     transition: transform .2s ease-out;
 
+    @include respond(tab-port) {
+        margin-bottom: 2rem;
+    }
+
     .file__name {
         position: absolute;
         right: -80px;

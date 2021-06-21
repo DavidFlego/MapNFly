@@ -168,6 +168,9 @@ body {
   background-color: #3aadb1;
   box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.1);
   transition: transform .2s ease-out; }
+  @media only screen and (max-width: 56.25em) {
+    .file__input--label {
+      margin-bottom: 2rem; } }
   .file__input--label .file__name {
     position: absolute;
     right: -80px;
@@ -218,18 +221,22 @@ body {
     @media only screen and (max-width: 37.5em) {
       .card__body {
         display: block;
-        margin: 0; } }
+        margin: 2rem 0; } }
   .card__images {
     width: 36vw;
     display: inherit;
     position: relative;
     margin: 0 auto;
     transform: scale(1); }
+    @media only screen and (max-width: 56.25em) {
+      .card__images {
+        width: 46vw; } }
     @media only screen and (max-width: 37.5em) {
       .card__images {
+        width: 75vw;
         margin: 40px auto 0 auto; } }
     .card__images--view {
-      width: 90%;
+      width: 70%;
       margin-right: 3rem;
       padding-left: 6px; }
       @media only screen and (max-width: 37.5em) {
@@ -240,13 +247,17 @@ body {
       width: 100%;
       text-align: center; }
     .card__images--edit {
-      width: 25vw;
       margin-bottom: 3rem; }
+      @media only screen and (max-width: 37.5em) {
+        .card__images--edit {
+          width: 100%; } }
     .card__images img {
       width: 100%;
-      max-height: 200px;
       border-radius: 3px;
       box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.1); }
+      @media only screen and (max-width: 37.5em) {
+        .card__images img {
+          max-height: 100%; } }
     .card__images .card-img--input {
       visibility: hidden;
       position: absolute;
@@ -318,6 +329,10 @@ body {
     margin: 2rem;
     box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.3);
     border-radius: 16px; }
+    @media only screen and (max-width: 37.5em) {
+      .card__map {
+        margin: 15px 0 0 0;
+        width: 100%; } }
     .card__map .mapboxgl-canvas {
       border-top-left-radius: 16px;
       border-top-right-radius: 16px;
@@ -376,16 +391,16 @@ body {
   top: 0; }
 
 .form-container {
-  min-width: 45vw; }
+  width: 45vw; }
   @media only screen and (max-width: 75em) {
     .form-container {
-      min-width: 45vw; } }
+      width: 45vw; } }
   @media only screen and (max-width: 56.25em) {
     .form-container {
-      min-width: 65vw; } }
+      width: 65vw; } }
   @media only screen and (max-width: 37.5em) {
     .form-container {
-      min-width: 80vw; } }
+      width: 80vw; } }
 
 .form-group {
   display: flex;
@@ -400,6 +415,9 @@ body {
         margin: 0; } }
     .form-group > div.form-file--input, .form-group > div.rating-group, .form-group > div.form-rating {
       width: inherit; }
+  @media only screen and (max-width: 56.25em) {
+    .form-group:nth-child(-n+2) {
+      margin-bottom: 0; } }
   @media only screen and (max-width: 56.25em) {
     .form-group {
       display: block; } }
@@ -481,6 +499,9 @@ body {
 
 .form-description {
   display: block; }
+  @media only screen and (max-width: 56.25em) {
+    .form-description {
+      margin-bottom: 2rem; } }
 
 .form-file--input {
   display: inline-block; }
@@ -660,6 +681,9 @@ input::-webkit-inner-spin-button {
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group {
   margin: 0 20px 50px 0; }
+  @media only screen and (max-width: 37.5em) {
+    .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group {
+      margin: 0 10px 10px 0; } }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-attrib {
   margin: 0 10px 10px 0; }
@@ -1047,6 +1071,16 @@ input[type="search"]::-webkit-search-results-decoration {
   .dd-rating-group .rating__icon--none,
   .dd-rating-group .dd-rating__icon--none {
     color: #eee; }
+
+@media only screen and (max-width: 56.25em) {
+  .rating-group {
+    width: 100% !important;
+    justify-content: center; } }
+
+@media only screen and (max-width: 37.5em) {
+  .rating-group {
+    width: 100% !important;
+    justify-content: center; } }
 
 /* if any input is checked, make its following siblings grey */
 .rating__input:checked ~ .rating__label .rating__icon--star,

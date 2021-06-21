@@ -9,6 +9,10 @@
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-group{
     margin: 0 20px 50px 0;
+
+    @include respond(phone) {
+        margin: 0 10px 10px 0;
+    }
 }
 
 .mapboxgl-ctrl-bottom-right .mapboxgl-ctrl-attrib {
