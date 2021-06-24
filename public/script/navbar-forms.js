@@ -4,16 +4,31 @@ import { resetRatingStars } from './rating-star.js';
 export function nextInputField() {
     const formInputs = document.querySelectorAll('.dd__input');
     const btnSubmit = document.querySelector('.dd-submit');
+    const nextInputArrows = document.querySelectorAll('.dd-next');
 
+    nextInputArrows.forEach(arrow => {
+        const parent = arrow.parentElement;
+        const nextForm = parent.nextElementSibling;
+
+        arrow.addEventListener('click', e => {
+            if ( parent.querySelector('.dd__file-input') ) {
+                nextInput(parent, nextForm);
+            } else if ( parent.querySelector('.dd__input').value != '' ) {
+                // Set active/innactive styles on next form input
+                nextInput(parent, nextForm);
+            }
+        })
+    })
+    
     formInputs.forEach(input => {
         const parent = input.parentElement;
         const nextForm = parent.nextElementSibling;
-
+        
+        // Event listener on Enter keypress
         input.addEventListener('keypress', e => {            
             // Check to see if ENTER was pressed and the submit button was active or not
             if (e.key === 'Enter' && e.target === btnSubmit) {
-                // Submit button was 'clicked' | show success msg and then submit the form
-                
+                // Submit button was 'clicked' | show success msg and then submit the form 
             } else if (e.key === 'Enter' && e.target !== btnSubmit && input.value != '') {  /* VALIDATION STILL MISSING */
                 // Cancel form's submit event
                  e.preventDefault();
@@ -92,7 +107,9 @@ window.addEventListener('click', e => {
             !e.target.matches('.dd__in') && 
             !e.target.matches('.dd-rating__label') &&
             !e.target.matches('.signup-user') &&
-            !e.target.matches('.login-user')) {
+            !e.target.matches('.login-user') &&
+            !e.target.matches('.dd__input--label') &&
+            !e.target.matches('.fa-angle-right')) { // image file input
             
             // Sets all inputs to innactive
             toInnactive(group);
@@ -102,6 +119,8 @@ window.addEventListener('click', e => {
             formInputs.forEach(input => {
                 input.value = '';
             })
+
+            document.querySelector('.dd__file-name').textContent = '';
 
             // resets checked input for rating star
             resetRatingStars()

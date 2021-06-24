@@ -92,7 +92,8 @@
             //basic validation
             & + .dd__label + span {
                 position: absolute;
-                right: 0;
+                right: 40px;
+                transition: all .3s ease;
             }
 
             & + .dd__label + span::before {
@@ -105,8 +106,10 @@
                 transition: all .3s ease;
             }
 
+            &:valid + .dd__label + span,
             &:valid + .dd__label + span::before {
-                margin-right: 10px;
+                right: 30px;
+                margin-left: 10px;
                 opacity: 1;
                 transition: all .3s ease;
             }

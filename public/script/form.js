@@ -9,6 +9,18 @@ file.addEventListener('change', (e) => {
     document.querySelector('.file__name').textContent = `${e.target.files.length} files selected`;
 });
 
+const file2 = document.querySelector('.dd__file-input');
+file2.addEventListener('change', (e) => {
+    // If I want to display names of files
+    // let showFiles = [];
+    // Array.from(e.target.files).forEach(el => {
+    //     showFiles.push(el.name);
+    // });
+    
+    console.log(e.target.files)
+    document.querySelector('.dd__file-name').textContent = `${e.target.files.length} files selected`;
+});
+
 const form = document.querySelector('.form');
 const title = document.getElementById('title');
 const formInput = document.querySelectorAll('.form__input--required');

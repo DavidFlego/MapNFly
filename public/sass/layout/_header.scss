@@ -1,6 +1,7 @@
 .header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     z-index: 100;   // in front of new session dropdown form
     font-size: 1.4rem;
     height: 50px;
@@ -64,6 +65,8 @@
 
     &__login {
         font-size: 1.4rem;
+        width: 100%;
+        text-align: end;
     }
 
     &__user {

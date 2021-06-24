@@ -143,19 +143,25 @@ body {
     .form-file--input {
       margin: 0; } }
 
-.file__input {
+.file__input,
+.dd__file-input {
   opacity: 0;
   width: 0.1px;
   height: 0.1px;
   position: absolute; }
   .file__input:hover + .file__input--label,
-  .file__input:focus + .file__input--label {
+  .file__input:focus + .file__input--label,
+  .dd__file-input:hover + .file__input--label,
+  .dd__file-input:focus + .file__input--label {
     transform: scale(1.02); }
-  .file__input:focus + .file__input--label {
+  .file__input:focus + .file__input--label,
+  .dd__file-input:focus + .file__input--label {
     outline: 1px solid #000;
     outline: -webkit-focus-ring-color auto 2px; }
 
-.file__input--label {
+.file__input--label,
+.dd__input--label {
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,18 +175,43 @@ body {
   box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.1);
   transition: transform .2s ease-out; }
   @media only screen and (max-width: 56.25em) {
-    .file__input--label {
+    .file__input--label,
+    .dd__input--label {
       margin-bottom: 2rem; } }
-  .file__input--label .file__name {
+  .file__input--label .file__name,
+  .dd__input--label .file__name {
     position: absolute;
     right: -80px;
     margin: 0 auto;
     font-size: 1.2rem;
     color: #555; }
     @media only screen and (max-width: 56.25em) {
-      .file__input--label .file__name {
+      .file__input--label .file__name,
+      .dd__input--label .file__name {
         right: initial;
         top: 30px; } }
+  .file__input--label .dd__file-name,
+  .dd__input--label .dd__file-name {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 0;
+    font-size: 1.2rem; }
+
+.dd__input--label {
+  width: 100%;
+  height: 100%; }
+
+.dd-next {
+  position: absolute;
+  right: 0;
+  z-index: 1000;
+  cursor: pointer;
+  color: #2f97c1;
+  font-size: 30px;
+  margin-right: 10px; }
+  .dd-next.dd-next-onfile {
+    color: #faf9f9; }
 
 .card {
   box-shadow: 0 0.1rem 9rem rgba(51, 51, 51, 0.1);
@@ -265,8 +296,7 @@ body {
     .card__images .card-img--delete {
       position: absolute;
       left: 50%;
-      transform: translate(-50%);
-      bottom: -45px; }
+      transform: translate(-50%); }
   .card__details {
     width: 100%;
     margin: 0 3rem; }
@@ -405,6 +435,7 @@ body {
 .form-group {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   margin-bottom: 2.2rem; }
   .form-group > div {
@@ -511,12 +542,10 @@ body {
 
 .form-rating {
   width: inherit;
-  display: inline-block;
-  float: right; }
+  display: inline-block; }
   @media only screen and (max-width: 56.25em) {
     .form-rating {
       display: block;
-      float: none;
       margin: 2.2rem auto 2.2rem auto;
       max-width: fit-content; } }
 
@@ -595,7 +624,8 @@ body {
       .dd-form .dd-group .dd__input + .dd__label + span,
       .dd-form .dd-group .dd-success-msg + .dd__label + span {
         position: absolute;
-        right: 0; }
+        right: 40px;
+        transition: all .3s ease; }
       .dd-form .dd-group .dd__input + .dd__label + span::before,
       .dd-form .dd-group .dd-success-msg + .dd__label + span::before {
         content: "\f058";
@@ -605,9 +635,12 @@ body {
         color: #56b95a;
         opacity: 0;
         transition: all .3s ease; }
+      .dd-form .dd-group .dd__input:valid + .dd__label + span,
       .dd-form .dd-group .dd__input:valid + .dd__label + span::before,
+      .dd-form .dd-group .dd-success-msg:valid + .dd__label + span,
       .dd-form .dd-group .dd-success-msg:valid + .dd__label + span::before {
-        margin-right: 10px;
+        right: 30px;
+        margin-left: 10px;
         opacity: 1;
         transition: all .3s ease; }
       .dd-form .dd-group .dd__input::-webkit-input-placeholder,
@@ -755,10 +788,10 @@ input::-webkit-inner-spin-button {
       width: 30vw; } }
   @media only screen and (max-width: 56.25em) {
     .mapboxgl-ctrl-geocoder--input {
-      width: 35vw; } }
+      width: 40vw; } }
   @media only screen and (max-width: 37.5em) {
     .mapboxgl-ctrl-geocoder--input {
-      width: 35vw; } }
+      width: 55vw; } }
   .mapboxgl-ctrl-geocoder--input::-ms-clear {
     display: none;
     /* hide input clear button in IE */ }
@@ -1178,6 +1211,7 @@ input[type="search"]::-webkit-search-results-decoration {
 .header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   z-index: 100;
   font-size: 1.4rem;
   height: 50px;
@@ -1205,7 +1239,9 @@ input[type="search"]::-webkit-search-results-decoration {
     .header__main .navbar {
       margin-left: 10px; } }
   .header__login {
-    font-size: 1.4rem; }
+    font-size: 1.4rem;
+    width: 100%;
+    text-align: end; }
   .header__user {
     position: relative;
     min-width: 160px; }

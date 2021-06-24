@@ -131,7 +131,8 @@
     }
 }
 
-.file__input {
+.file__input,
+.dd__file-input {
     opacity: 0;
     width: 0.1px;
     height: 0.1px;
@@ -148,7 +149,9 @@
     }
 }
 
-.file__input--label {
+.file__input--label,
+.dd__input--label {
+    z-index: 100;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -179,5 +182,34 @@
             right: initial;
             top: 30px;
         }
+    }
+
+    .dd__file-name {
+        @include centerH;
+        bottom: 0;  
+        font-size: 1.2rem;      
+    }
+}
+
+.dd__input--label {
+    width: 100%;
+    height: 100%;
+}
+
+.dd__file-name {
+
+}
+
+.dd-next {
+    position: absolute;
+    right: 0;
+    z-index: 1000;
+    cursor: pointer;
+    color: $color-primary;
+    font-size: 30px;
+    margin-right: 10px;
+
+    &.dd-next-onfile {
+        color: $color-grey-light-1;
     }
 }

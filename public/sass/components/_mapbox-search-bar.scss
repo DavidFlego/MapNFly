@@ -22,11 +22,11 @@
   }
 
   @include respond(tab-port) { 
-    width: 35vw;
+    width: 40vw;
   }
 
   @include respond(phone) {
-    width: 35vw; 
+    width: 55vw; 
   }
 
   &::-ms-clear {
