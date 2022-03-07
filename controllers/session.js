@@ -96,7 +96,7 @@ module.exports.deleteImage = async (req, res) => {
     // await cloudinary.uploader.destroy(imgId, function(err, result) { console.log(result, err) });
 
     const updatedSession = await Session.findByIdAndUpdate(id,
-        { $pull: { images: {filename: {$eq: `MapNFly/${imgId}`}} } },
+        { $pull: { images: {filename: {$eq: `MapNFly/${imgId}`} } } },
         { useFindAndModify: false, new: true })
     req.flash('successSession', 'Image successfully deleted!');
     res.redirect(`/sessions/${updatedSession._id}/edit`)

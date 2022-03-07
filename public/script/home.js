@@ -1,5 +1,4 @@
-
-console.log(sessions)
+// MAPBOX API
 
 mapboxgl.accessToken = mapBoxToken;
 
@@ -80,8 +79,8 @@ map.on('load', function () {
             'circle-radius': [
                 'step',
                 ['get', 'point_count'],
-                15, // number of sessions displayed in circle
-                10, // size of a circle
+                15, // size of a circle
+                10, // number of sessions displayed in circle
                 20, // ...
                 20, // ...
                 25  // ...
@@ -145,7 +144,8 @@ map.on('load', function () {
     // description HTML from its properties.
     
     map.on('click', 'unclustered-point', async function (e) {
-        const {popupMarkup} = e.features[0].properties;
+        console.log(e.features[0]);
+        const { popupMarkup } = e.features[0].properties; // properties.popupMarkup creted in session.js model
         const coordinates = e.features[0].geometry.coordinates.slice();
         
         // Ensure that if the map is zoomed out such that

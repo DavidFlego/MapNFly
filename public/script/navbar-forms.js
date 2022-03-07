@@ -1,6 +1,7 @@
 
 import { resetRatingStars } from './rating-star.js';
 
+// import in navbar.js
 export function nextInputField() {
     const formInputs = document.querySelectorAll('.dd__input');
     const btnSubmit = document.querySelector('.dd-submit');
@@ -56,6 +57,7 @@ export function toInnactive(el) {
 }
 
 // SHOW NEXT INPUT AND HIDE CURRENT INPUT
+// inport also in rating-star.js
 export function nextInput(parent, nextFormInput) {
     toInnactive(parent);
     toActive(nextFormInput);
@@ -64,6 +66,7 @@ export function nextInput(parent, nextFormInput) {
 }
 
 // RESET DROPDOWN FORM AND FOCUS
+// import in navbar.js
 export function resetForms(target) {
 
     const allFormsInput = document.querySelectorAll('.dd__in');

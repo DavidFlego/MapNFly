@@ -10,6 +10,7 @@
     </p>
 </div>
 
+
 <div class="card">
     
     <div class="card__body">
@@ -57,9 +58,14 @@
                 </p>
             </div>
             
-            <div class="card__rating-stars rating-group">
-                <%- include('../partials/star-rating', { rating }) %>
+            <div class="rating-group">
+                <p class="starability-result" data-rating="<%=session.rating%>">
+                    Rated: <%=session.rating%> stars
+                </p>
             </div>
+            <!-- <div class="card__rating-stars rating-group">
+                <%# include('../partials/star-rating', { rating }) %>
+            </div> -->
             
             <div class="card__actions">
                 <form action="/sessions">

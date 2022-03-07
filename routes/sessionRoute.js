@@ -3,8 +3,8 @@ const router = express.Router();
 
 // CLOUDINARY
 const { storage } = require('../cloudinary')
-
 // help us with parsing the multipart/form-data
+// primarily used to upload files
 const multer = require('multer')
 const upload = multer( {storage} )
 

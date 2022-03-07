@@ -13,6 +13,10 @@ imageSchema.virtual('imgToDelete').get(function() {
     return this.filename.split('/').pop();
 })
 
+
+// Mongoose virtuals are not part of result object by default
+// virtuals are not included when you convert document to JSON
+// to include res.json() set toJSON schema option to { virtuals: true }
 const opts = { toJSON: { virtuals: true } };
 
 const SessionSchema = new Schema({

@@ -17,8 +17,13 @@
 @import './components/mapbox-search-bar';
 @import './components/search';
 @import './components/user-dropdown';
+@import './components/star-rating/rating';
+@import './components/star-rating/starability-base';
+@import './components/star-rating/starability-result';
+@import './components/star-rating/variables';
 @import './components/star-rating';
 @import './components/flash-msg';
+
 
 @import './layout/home';
 @import './layout/body';

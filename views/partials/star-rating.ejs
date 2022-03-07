@@ -1,3 +1,4 @@
+<!-- OR USE STARABILITY.css -->
 
 <!-- <div class="rating-group"> -->
 
@@ -5,59 +6,30 @@
     <label aria-label="0 stars" class="rating__label" for="rating-0">&nbsp;</label>
     <input class="rating__input rating__input--none" name="session[rating]" id="rating-0" value="0" type="radio" checked>
             <!-- df__in -->
-    <!-- 0.5 star rating -->
-    <!-- <label aria-label="0.5 stars" class="rating__label rating__label--half" for="rating-05">
-        <i class="rating__icon rating__icon--star fas fa-star-half"></i>
-    </label>
-    <input class="rating__input" name="session[rating]" id="rating-05" value="0.5" type="radio"> -->
 
     <!-- 1 star rating -->
     <label aria-label="1 star" class="rating__label" for="rating-10">
         <i class="rating__icon rating__icon--star fas fa-star"></i>
     </label>
     <input class="rating__input" name="session[rating]" id="rating-10" value="1" type="radio">
-
-    <!-- 1.5 star rating -->
-    <!-- <label aria-label="1.5 stars" class="rating__label rating__label--half" for="rating-15">
-        <i class="rating__icon rating__icon--star fas fa-star-half"></i>
-    </label>
-    <input class="rating__input" name="session[rating]" id="rating-15" value="1.5" type="radio" > -->
-
+    
     <!-- 2 star rating -->
     <label aria-label="2 stars" class="rating__label" for="rating-20">
         <i class="rating__icon rating__icon--star fas fa-star"></i>
     </label>
     <input class="rating__input" name="session[rating]" id="rating-20" value="2" type="radio">
 
-    <!-- 2.5 star rating -->
-    <!-- <label aria-label="2.5 stars" class="rating__label rating__label--half" for="rating-25">
-        <i class="rating__icon rating__icon--star fas fa-star-half"></i>
-    </label>
-    <input class="rating__input" name="session[rating]" id="rating-25" value="2.5" type="radio"> -->
-
     <!-- 3 star rating -->
     <label aria-label="3 stars" class="rating__label" for="rating-30">
         <i class="rating__icon rating__icon--star fas fa-star"></i>
     </label>
     <input class="rating__input" name="session[rating]" id="rating-30" value="3" type="radio">
-
-    <!-- 3.5 star rating -->
-    <!-- <label aria-label="3.5 stars" class="rating__label rating__label--half" for="rating-35">
-        <i class="rating__icon rating__icon--star fas fa-star-half"></i>
-    </label>
-    <input class="rating__input" name="session[rating]" id="rating-35" value="3.5" type="radio"> -->
-
+    
     <!-- 4 star rating -->
     <label aria-label="4 stars" class="rating__label" for="rating-40">
         <i class="rating__icon rating__icon--star fas fa-star"></i>
     </label>
     <input class="rating__input" name="session[rating]" id="rating-40" value="4" type="radio">
-
-    <!-- 4.5 star rating -->
-    <!-- <label aria-label="4.5 stars" class="rating__label rating__label--half" for="rating-45">
-        <i class="rating__icon rating__icon--star fas fa-star-half"></i>
-    </label>
-    <input class="rating__input" name="session[rating]" id="rating-45" value="4.5" type="radio"> -->
 
     <!-- 5 star rating -->
     <label aria-label="5 stars" class="rating__label" for="rating-50">
@@ -70,8 +42,10 @@
 <script>
     const starInput = document.querySelectorAll('.rating__input');
     
-    const rating =  <%- rating %>;
+    const rating =  <%- rating %>
     starInput.forEach(input => {
+        console.log(input)
+        console.log(input.value)
         if ( input.value == rating ) {
             input.setAttribute('checked', '');
         } else if (input.value !== rating) {

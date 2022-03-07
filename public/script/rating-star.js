@@ -1,6 +1,9 @@
+// or use STARABILITY.css
 
 import { nextInput } from './navbar-forms.js';
 
+
+// import in new-session-form and navbar.js
 export function inputRatingStars() {
 
     const ratingStarInput = document.querySelectorAll('.dd-rating__input');
@@ -34,6 +37,7 @@ export function inputRatingStars() {
 }
 
 // resets CHECKED input for rating star
+// import in navbar-forms.js
 export function resetRatingStars() {
     const ratingStarInput = document.querySelectorAll('.dd-rating__input');
     ratingStarInput.forEach( (input, index) => {

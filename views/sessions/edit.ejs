@@ -92,7 +92,21 @@
             </div>
             
             <div class="rating-group">
-                <%- include('../partials/star-rating', { rating }) %>
+                <fieldset class="starability-grow">
+                    <input type="radio" id="no-rate" class="rating__input input-no-rate" name="session[rating]" value="1"
+                        aria-label="No rating." />
+                    <input class="rating__input" type="radio" id="first-rate1" name="session[rating]" value="1" />
+                    <label for="first-rate1" title="Terrible">1 star</label>
+                    <input class="rating__input" type="radio" id="first-rate2" name="session[rating]" value="2" />
+                    <label for="first-rate2" title="Not good">2 stars</label>
+                    <input class="rating__input" type="radio" id="first-rate3" name="session[rating]" value="3" />
+                    <label for="first-rate3" title="Average">3 stars</label>
+                    <input class="rating__input" type="radio" id="first-rate4" name="session[rating]" value="4" />
+                    <label for="first-rate4" title="Very good">4 stars</label>
+                    <input class="rating__input" type="radio" id="first-rate5" name="session[rating]" value="5" />
+                    <label for="first-rate5" title="Amazing">5 stars</label>
+                </fieldset>
+                <%# include('../partials/star-rating', { rating }) %>
             </div>
         </div>
 
@@ -135,3 +149,17 @@
     </div>
 
 </div>
+
+<script>
+    const starInput = document.querySelectorAll('.rating__input');
+
+    const rating =  <%- rating %>
+
+    starInput.forEach(input => {
+        if (input.value <= rating) {
+            input.setAttribute('checked', '');
+        } else if (input.value >= rating) {
+            input.removeAttribute('checked');
+        }
+    })
+</script>

@@ -46,7 +46,7 @@ db.once('open', () => {
 // EXPRESS SESSION
 const session = require('express-session');
 const MongoStore = require('connect-mongo'); // for storing sessions on MOngo not in memory
-const secret = process.env.SECRET || 'thisShouldBeABetterSecret';
+const secret = process.env.SECRET || 'thisShouldBeABetterSecret'; // SECRET variable configured in Heroku app
 
 const store = MongoStore.create({
     mongoUrl: dbUrl,
@@ -68,21 +68,18 @@ const sessionConfig = {
     resave: false,
     saveUninitialized: true,
     cookie: {
-        httpOnly: true, // little extra security
+        httpOnly: true, // little extra security -> Cookie cannot be accessed through client side scripts
         // secure: true, // https
         expires: Date.now() + 1000*60*60*24*7,
         maxAge: 1000*60*60*24*7
     }
 }
 
-// FLASH MESSAGES
-const flash = require('connect-flash');
-
-app.engine('ejs', ejsMate);
-app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
-app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
+app.engine('ejs', ejsMate);  // Layout, partial and block template functions for the EJS template engine. -> boilerplate.ejs
+app.set('view engine', 'ejs');  // Use ejs as templating language, to generate HTML markup with plain JavaScript
+app.set('views', path.join(__dirname, 'views'));  // Start/access your file from anywhere in your code tree
+app.use(express.urlencoded({ extended: true }));  // Parsing req.body - Parses incoming requests with urlencoded payloads and is based on body-parser.
+app.use(methodOverride('_method'));  // Lets you use HTTP verbs such as PUT or DELETE in places where the client doesn’t support it.
 app.use(express.static(path.join(__dirname, 'public'))); // for exmpl. load .css files from /public/css
 app.use('/public', express.static('public')); // load .js files from /public/script...
 app.use(session(sessionConfig));
@@ -95,6 +92,8 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser()); // how to store user in session
 passport.deserializeUser(User.deserializeUser()); // how to remove user from session
 
+// FLASH MESSAGEs
+const flash = require('connect-flash');
 app.use(flash());
 app.use( (req, res, next) => {
     res.locals.currentUser = req.user;
@@ -131,7 +130,7 @@ app.use((err, req, res, next) => {
     res.status(statusCode).render('./partials/error', { err });
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3000; // PORT available automaticaly on Heroku app
 app.listen(port, () => {
     console.log(`Serving on port ${port}`);
 });
